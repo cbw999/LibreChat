@@ -1,3 +1,40 @@
+## npm ci(Continuous Integration (지속적인 통합)"의 약자) 명령으로 package-lock.json 또는 npm-shrinkwrap.json 기반으로 정확한 버전만 설치 
+### package-lock.json에 따라 정확하게, 깨끗하게, 그리고 일관되게 의존성을 설치하라"는 명령입니다.
+## LibreChat 종속성 설치
+```
+npm ci
+```
+
+### 프런트엔드 빌드
+```
+npm run frontend
+```
+
+### 파일을 만드세요 .env. 파일이 없으면 복사 .env.example하여 설정하세요
+
+### 도커 몽고 db 설치
+```
+docker pull mongo
+docker run --name mongo-db -d -p 27017:27017 mongo
+```
+### 콘솔에 자세한 서버 출력을 표시하려면 DEBUG_CONSOLE true로 설정합니다. .env
+
+### 백엔드 시작 (개발을 위해)
+```
+npm run backend:dev
+```
+### 백엔드 접속주소 : http://localhost:3080
+
+### 프론트엔드 시작(개발을 위해)
+```
+npm run frontend:dev
+```
+### 프론트엔드 접속주소 : http://localhost:3090
+
+### 몽고db 접속툴 다운로드
+[몽고db 접속툴 다운로드](https://www.mongodb.com/try/download/compass)
+
+
 <p align="center">
   <a href="https://librechat.ai">
     <img src="client/public/assets/logo.svg" height="256">
