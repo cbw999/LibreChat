@@ -1,38 +1,38 @@
-## npm ci(Continuous Integration (지속적인 통합)"의 약자) 명령으로 package-lock.json 또는 npm-shrinkwrap.json 기반으로 정확한 버전만 설치 
-### package-lock.json에 따라 정확하게, 깨끗하게, 그리고 일관되게 의존성을 설치하라"는 명령입니다.
+## npm ci(Continuous Integration, 지속적인 통합)의 약자 명령어로 package-lock.json 또는 npm-shrinkwrap.json 기반의 정확한 버전만 설치
+### package-lock.json에 따라 정확하고, 깨끗하며, 일관되게 의존성을 설치하는 명령입니다.
 ## LibreChat 종속성 설치
 ```
 npm ci
 ```
 
-### 프런트엔드 빌드
+### 프론트엔드 빌드
 ```
 npm run frontend
 ```
 
-### 파일을 만드세요 .env. 파일이 없으면 복사 .env.example하여 설정하세요
+### .env 파일을 만드세요. 파일이 없으면 .env.example을 복사해서 설정하세요.
 
-### 도커 몽고 db 설치
+### 도커로 몽고DB 설치
 ```
 docker pull mongo
 docker run --name mongo-db -d -p 27017:27017 mongo
 ```
-### 콘솔에 자세한 서버 출력을 표시하려면 DEBUG_CONSOLE true로 설정합니다. .env
+### 콘솔에 자세한 서버 출력을 표시하려면 .env에서 DEBUG_CONSOLE을 true로 설정하세요.
 
-### 백엔드 시작 (개발을 위해)
+### 백엔드 시작 (개발용)
 ```
 npm run backend:dev
 ```
-### 백엔드 접속주소 : http://localhost:3080
+### 백엔드 접속 주소 : http://localhost:3080
 
-### 프론트엔드 시작(개발을 위해)
+### 프론트엔드 시작 (개발용)
 ```
 npm run frontend:dev
 ```
-### 프론트엔드 접속주소 : http://localhost:3090
+### 프론트엔드 접속 주소 : http://localhost:3090
 
-### 몽고db 접속툴 다운로드
-[몽고db 접속툴 다운로드](https://www.mongodb.com/try/download/compass)
+### 몽고DB 접속 툴 다운로드
+[몽고DB 접속 툴 다운로드](https://www.mongodb.com/try/download/compass)
 
 
 <p align="center">
@@ -65,13 +65,13 @@ npm run frontend:dev
 
 <p align="center">
 <a href="https://railway.app/template/b5k2mn?referralCode=HI9hWz">
-  <img src="https://railway.app/button.svg" alt="Deploy on Railway" height="30">
+  <img src="https://railway.app/button.svg" alt="Railway에 배포" height="30">
 </a>
 <a href="https://zeabur.com/templates/0X2ZY8">
-  <img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30"/>
+  <img src="https://zeabur.com/button.svg" alt="Zeabur에 배포" height="30"/>
 </a>
 <a href="https://template.cloud.sealos.io/deploy?templateName=librechat">
-  <img src="https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg" alt="Deploy on Sealos" height="30">
+  <img src="https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg" alt="Sealos에 배포" height="30">
 </a>
 </p>
 
@@ -79,130 +79,132 @@ npm run frontend:dev
   <a href="https://www.librechat.ai/docs/translation">
     <img 
       src="https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&color=2096F3&label=locize&query=%24.translatedPercentage&url=https://api.locize.app/badgedata/4cb2598b-ed4d-469c-9b04-2ed531a8cb45&suffix=%+translated" 
-      alt="Translation Progress">
+      alt="번역 진행률">
   </a>
 </p>
 
 
-# ✨ Features
+# ✨ 주요 기능
 
-- 🖥️ **UI & Experience** inspired by ChatGPT with enhanced design and features
+- 🖥️ **UI & 경험**: ChatGPT에서 영감을 받은 디자인과 향상된 기능 제공
 
-- 🤖 **AI Model Selection**:  
-  - Anthropic (Claude), AWS Bedrock, OpenAI, Azure OpenAI, Google, Vertex AI, OpenAI Assistants API (incl. Azure)
-  - [Custom Endpoints](https://www.librechat.ai/docs/quick_start/custom_endpoints): Use any OpenAI-compatible API with LibreChat, no proxy required
-  - Compatible with [Local & Remote AI Providers](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints):
+- 🤖 **AI 모델 선택**:  
+  - Anthropic(Claude), AWS Bedrock, OpenAI, Azure OpenAI, Google, Vertex AI, OpenAI Assistants API(포함 Azure)
+  - [커스텀 엔드포인트](https://www.librechat.ai/docs/quick_start/custom_endpoints): LibreChat에서 OpenAI 호환 API를 자유롭게 사용, 프록시 불필요
+  - [로컬 및 원격 AI 제공자](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints)와 호환:
     - Ollama, groq, Cohere, Mistral AI, Apple MLX, koboldcpp, together.ai,
-    - OpenRouter, Perplexity, ShuttleAI, Deepseek, Qwen, and more
+    - OpenRouter, Perplexity, ShuttleAI, Deepseek, Qwen 등
 
-- 🔧 **[Code Interpreter API](https://www.librechat.ai/docs/features/code_interpreter)**: 
-  - Secure, Sandboxed Execution in Python, Node.js (JS/TS), Go, C/C++, Java, PHP, Rust, and Fortran
-  - Seamless File Handling: Upload, process, and download files directly
-  - No Privacy Concerns: Fully isolated and secure execution
+- 🔧 **[코드 인터프리터 API](https://www.librechat.ai/docs/features/code_interpreter)**: 
+  - Python, Node.js(JS/TS), Go, C/C++, Java, PHP, Rust, Fortran의 안전한 샌드박스 실행
+  - 파일 업로드, 처리, 다운로드 지원
+  - 완전 격리된 환경으로 개인정보 걱정 없음
 
-- 🔦 **Agents & Tools Integration**:  
-  - **[LibreChat Agents](https://www.librechat.ai/docs/features/agents)**:
-    - No-Code Custom Assistants: Build specialized, AI-driven helpers without coding  
-    - Flexible & Extensible: Attach tools like DALL-E-3, file search, code execution, and more  
-    - Compatible with Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, and more
-    - [Model Context Protocol (MCP) Support](https://modelcontextprotocol.io/clients#librechat) for Tools
-  - Use LibreChat Agents and OpenAI Assistants with Files, Code Interpreter, Tools, and API Actions
+- 🔦 **에이전트 & 도구 통합**:  
+  - **[LibreChat 에이전트](https://www.librechat.ai/docs/features/agents)**:
+    - 노코드 커스텀 어시스턴트: 코딩 없이 AI 기반 도우미 제작  
+    - 유연하고 확장 가능: DALL-E-3, 파일 검색, 코드 실행 등 도구 연결  
+    - 커스텀 엔드포인트, OpenAI, Azure, Anthropic, AWS Bedrock 등과 호환
+    - 도구용 [MCP 지원](https://modelcontextprotocol.io/clients#librechat)
+  - LibreChat 에이전트와 OpenAI 어시스턴트에서 파일, 코드 인터프리터, 도구, API 액션 사용
 
-- 🔍 **Web Search**:  
-  - Search the internet and retrieve relevant information to enhance your AI context
-  - Combines search providers, content scrapers, and result rerankers for optimal results
-  - **[Learn More →](https://www.librechat.ai/docs/features/web_search)**
+- 🔍 **웹 검색**:  
+  - 인터넷 검색 및 관련 정보로 AI 컨텍스트 강화
+  - 검색 제공자, 콘텐츠 스크래퍼, 결과 재정렬 기능 결합
+  - **[자세히 보기 →](https://www.librechat.ai/docs/features/web_search)**
 
-- 🪄 **Generative UI with Code Artifacts**:  
-  - [Code Artifacts](https://youtu.be/GfTj7O4gmd0?si=WJbdnemZpJzBrJo3) allow creation of React, HTML, and Mermaid diagrams directly in chat
+- 🪄 **코드 아티팩트로 생성형 UI**:  
+  - [코드 아티팩트](https://youtu.be/GfTj7O4gmd0?si=WJbdnemZpJzBrJo3)로 채팅에서 React, HTML, Mermaid 다이어그램 생성
 
-- 🎨 **Image Generation & Editing**
-  - Text-to-image and image-to-image with [GPT-Image-1](https://www.librechat.ai/docs/features/image_gen#1--openai-image-tools-recommended)
-  - Text-to-image with [DALL-E (3/2)](https://www.librechat.ai/docs/features/image_gen#2--dalle-legacy), [Stable Diffusion](https://www.librechat.ai/docs/features/image_gen#3--stable-diffusion-local), [Flux](https://www.librechat.ai/docs/features/image_gen#4--flux), or any [MCP server](https://www.librechat.ai/docs/features/image_gen#5--model-context-protocol-mcp)
-  - Produce stunning visuals from prompts or refine existing images with a single instruction
+- 🎨 **이미지 생성 및 편집**
+  - [GPT-Image-1](https://www.librechat.ai/docs/features/image_gen#1--openai-image-tools-recommended)로 텍스트→이미지, 이미지→이미지
+  - [DALL-E (3/2)](https://www.librechat.ai/docs/features/image_gen#2--dalle-legacy), [Stable Diffusion](https://www.librechat.ai/docs/features/image_gen#3--stable-diffusion-local), [Flux](https://www.librechat.ai/docs/features/image_gen#4--flux), 기타 [MCP 서버](https://www.librechat.ai/docs/features/image_gen#5--model-context-protocol-mcp) 지원
+  - 프롬프트로 멋진 이미지 생성 및 기존 이미지 수정
 
-- 💾 **Presets & Context Management**:  
-  - Create, Save, & Share Custom Presets  
-  - Switch between AI Endpoints and Presets mid-chat
-  - Edit, Resubmit, and Continue Messages with Conversation branching  
-  - [Fork Messages & Conversations](https://www.librechat.ai/docs/features/fork) for Advanced Context control
+- 💾 **프리셋 & 컨텍스트 관리**:  
+  - 커스텀 프리셋 생성, 저장, 공유  
+  - 채팅 중 AI 엔드포인트 및 프리셋 전환
+  - 메시지 편집, 재전송, 대화 분기  
+  - [메시지/대화 포크](https://www.librechat.ai/docs/features/fork)로 고급 컨텍스트 제어
 
-- 💬 **Multimodal & File Interactions**:  
-  - Upload and analyze images with Claude 3, GPT-4.5, GPT-4o, o1, Llama-Vision, and Gemini 📸  
-  - Chat with Files using Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, & Google 🗃️
+- 💬 **멀티모달 & 파일 상호작용**:  
+  - Claude 3, GPT-4.5, GPT-4o, o1, Llama-Vision, Gemini로 이미지 업로드 및 분석 📸  
+  - 커스텀 엔드포인트, OpenAI, Azure, Anthropic, AWS Bedrock, Google로 파일 채팅 🗃️
 
-- 🌎 **Multilingual UI**:  
-  - English, 中文, Deutsch, Español, Français, Italiano, Polski, Português Brasileiro
-  - Русский, 日本語, Svenska, 한국어, Tiếng Việt, 繁體中文, العربية, Türkçe, Nederlands, עברית
+- 🌎 **다국어 UI**:  
+  - 영어, 중국어, 독일어, 스페인어, 프랑스어, 이탈리아어, 폴란드어, 브라질 포르투갈어
+  - 러시아어, 일본어, 스웨덴어, 한국어, 베트남어, 번체 중국어, 아랍어, 터키어, 네덜란드어, 히브리어
 
-- 🧠 **Reasoning UI**:  
-  - Dynamic Reasoning UI for Chain-of-Thought/Reasoning AI models like DeepSeek-R1
+- 🧠 **추론 UI**:  
+  - DeepSeek-R1 등 Chain-of-Thought/Reasoning AI 모델용 동적 추론 UI
 
-- 🎨 **Customizable Interface**:  
-  - Customizable Dropdown & Interface that adapts to both power users and newcomers
+- 🎨 **커스터마이즈 가능한 인터페이스**:  
+  - 파워유저와 초보자 모두에게 적합한 드롭다운 및 인터페이스 커스터마이즈
 
-- 🗣️ **Speech & Audio**:  
-  - Chat hands-free with Speech-to-Text and Text-to-Speech  
-  - Automatically send and play Audio  
-  - Supports OpenAI, Azure OpenAI, and Elevenlabs
+- 🗣️ **음성 & 오디오**:  
+  - 음성 인식(STT), 음성 합성(TTS)으로 핸즈프리 채팅  
+  - 오디오 자동 전송 및 재생  
+  - OpenAI, Azure OpenAI, Elevenlabs 지원
 
-- 📥 **Import & Export Conversations**:  
-  - Import Conversations from LibreChat, ChatGPT, Chatbot UI  
-  - Export conversations as screenshots, markdown, text, json
+- 📥 **대화 가져오기 & 내보내기**:  
+  - LibreChat, ChatGPT, Chatbot UI에서 대화 가져오기  
+  - 스크린샷, 마크다운, 텍스트, json으로 대화 내보내기
 
-- 🔍 **Search & Discovery**:  
-  - Search all messages/conversations
+- 🔍 **검색 & 탐색**:  
+  - 모든 메시지/대화 검색
 
-- 👥 **Multi-User & Secure Access**:
-  - Multi-User, Secure Authentication with OAuth2, LDAP, & Email Login Support
-  - Built-in Moderation, and Token spend tools
+- 👥 **멀티유저 & 보안 접근**:
+  - OAuth2, LDAP, 이메일 로그인 지원 멀티유저, 보안 인증
+  - 내장 모더레이션, 토큰 사용량 도구
 
-- ⚙️ **Configuration & Deployment**:  
-  - Configure Proxy, Reverse Proxy, Docker, & many Deployment options  
-  - Use completely local or deploy on the cloud
+- ⚙️ **설정 & 배포**:  
+  - 프록시, 리버스 프록시, 도커, 다양한 배포 옵션 지원  
+  - 완전 로컬 또는 클라우드 배포 가능
 
-- 📖 **Open-Source & Community**:  
-  - Completely Open-Source & Built in Public  
-  - Community-driven development, support, and feedback
+- 📖 **오픈소스 & 커뮤니티**:  
+  - 완전 오픈소스, 공개 개발  
+  - 커뮤니티 주도 개발, 지원, 피드백
 
-[For a thorough review of our features, see our docs here](https://docs.librechat.ai/) 📚
+[자세한 기능은 공식 문서에서 확인하세요](https://docs.librechat.ai/) 📚
 
-## 🪶 All-In-One AI Conversations with LibreChat
+## 🪶 올인원 AI 대화 LibreChat
 
-LibreChat brings together the future of assistant AIs with the revolutionary technology of OpenAI's ChatGPT. Celebrating the original styling, LibreChat gives you the ability to integrate multiple AI models. It also integrates and enhances original client features such as conversation and message search, prompt templates and plugins.
+LibreChat은 OpenAI ChatGPT의 혁신적인 기술과 다양한 AI 모델 통합 기능을 제공합니다.  
+원본 스타일을 계승하면서, 대화/메시지 검색, 프롬프트 템플릿, 플러그인 등 다양한 기능을 강화했습니다.
 
-With LibreChat, you no longer need to opt for ChatGPT Plus and can instead use free or pay-per-call APIs. We welcome contributions, cloning, and forking to enhance the capabilities of this advanced chatbot platform.
+LibreChat을 사용하면 ChatGPT Plus 없이도 무료 또는 사용량 기반 API로 다양한 AI를 활용할 수 있습니다.  
+기여, 클론, 포크 모두 환영합니다!
 
-[![Watch the video](https://raw.githubusercontent.com/LibreChat-AI/librechat.ai/main/public/images/changelog/v0.7.6.gif)](https://www.youtube.com/watch?v=ilfwGQtJNlI)
+[![영상 보기](https://raw.githubusercontent.com/LibreChat-AI/librechat.ai/main/public/images/changelog/v0.7.6.gif)](https://www.youtube.com/watch?v=ilfwGQtJNlI)
 
-Click on the thumbnail to open the video☝️
+썸네일을 클릭하면 영상을 볼 수 있습니다☝️
 
 ---
 
-## 🌐 Resources
+## 🌐 리소스
 
-**GitHub Repo:**
+**GitHub 저장소:**
   - **RAG API:** [github.com/danny-avila/rag_api](https://github.com/danny-avila/rag_api)
-  - **Website:** [github.com/LibreChat-AI/librechat.ai](https://github.com/LibreChat-AI/librechat.ai)
+  - **웹사이트:** [github.com/LibreChat-AI/librechat.ai](https://github.com/LibreChat-AI/librechat.ai)
 
-**Other:**
-  - **Website:** [librechat.ai](https://librechat.ai)
-  - **Documentation:** [docs.librechat.ai](https://docs.librechat.ai)
-  - **Blog:** [blog.librechat.ai](https://blog.librechat.ai)
-
----
-
-## 📝 Changelog
-
-Keep up with the latest updates by visiting the releases page and notes:
-- [Releases](https://github.com/danny-avila/LibreChat/releases)
-- [Changelog](https://www.librechat.ai/changelog) 
-
-**⚠️ Please consult the [changelog](https://www.librechat.ai/changelog) for breaking changes before updating.**
+**기타:**
+  - **웹사이트:** [librechat.ai](https://librechat.ai)
+  - **문서:** [docs.librechat.ai](https://docs.librechat.ai)
+  - **블로그:** [blog.librechat.ai](https://blog.librechat.ai)
 
 ---
 
-## ⭐ Star History
+## 📝 변경 이력
+
+최신 업데이트는 아래에서 확인하세요:
+- [릴리즈](https://github.com/danny-avila/LibreChat/releases)
+- [변경 이력](https://www.librechat.ai/changelog) 
+
+**⚠️ 업데이트 전 [변경 이력](https://www.librechat.ai/changelog)에서 주요 변경사항을 꼭 확인하세요.**
+
+---
+
+## ⭐ Star 히스토리
 
 <p align="center">
   <a href="https://star-history.com/#danny-avila/LibreChat&Date">
@@ -220,17 +222,19 @@ Keep up with the latest updates by visiting the releases page and notes:
 
 ---
 
-## ✨ Contributions
+## ✨ 기여 안내
 
-Contributions, suggestions, bug reports and fixes are welcome!
+기여, 제안, 버그 리포트, 수정 모두 환영합니다!
 
-For new features, components, or extensions, please open an issue and discuss before sending a PR.
+새로운 기능, 컴포넌트, 확장 기능은 이슈를 먼저 열고 논의 후 PR을 보내주세요.
 
-If you'd like to help translate LibreChat into your language, we'd love your contribution! Improving our translations not only makes LibreChat more accessible to users around the world but also enhances the overall user experience. Please check out our [Translation Guide](https://www.librechat.ai/docs/translation).
+LibreChat의 다국어 번역에 기여하고 싶으시다면 언제든 환영합니다!  
+번역 품질 향상은 전 세계 사용자 접근성과 경험을 높입니다.  
+[번역 가이드](https://www.librechat.ai/docs/translation)를 참고하세요.
 
 ---
 
-## 💖 This project exists in its current state thanks to all the people who contribute
+## 💖 이 프로젝트는 모든 기여자 덕분에 존재합니다
 
 <a href="https://github.com/danny-avila/LibreChat/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=danny-avila/LibreChat" />
@@ -240,7 +244,7 @@ If you'd like to help translate LibreChat into your language, we'd love your con
 
 ## 🎉 Special Thanks
 
-We thank [Locize](https://locize.com) for their translation management tools that support multiple languages in LibreChat.
+LibreChat의 다국어 지원을 위해 번역 관리 도구를 제공해준 [Locize](https://locize.com)에 감사드립니다.
 
 <p align="center">
   <a href="https://locize.com" target="_blank" rel="noopener noreferrer">
