@@ -427,6 +427,15 @@ export class MCPManager {
     const { userId, ...callOptions } = options ?? {};
     const logPrefix = userId ? `[MCP][User: ${userId}][${serverName}]` : `[MCP][${serverName}]`;
 
+    // 타입가드 함수 정의 (파일 상단에 추가해도 되고 callTool 내부에 넣어도 됩니다)
+    function toMCPToolCallResponse(obj: any): t.MCPToolCallResponse {
+      return {
+        _meta: obj._meta,
+        content: obj.content,
+        isError: obj.isError,
+      };
+    }
+
     try {
       if (userId) {
         this.updateUserLastActivity(userId);
@@ -469,7 +478,9 @@ export class MCPManager {
         this.updateUserLastActivity(userId);
       }
       this.checkIdleConnections();
-      return formatToolContent(result, provider);
+
+      // 타입가드 함수로 변환 후 formatToolContent에 전달
+      return formatToolContent(toMCPToolCallResponse(result), provider);
     } catch (error) {
       // Log with context and re-throw or handle as needed
       this.logger.error(`${logPrefix}[${toolName}] Tool call failed`, error);
